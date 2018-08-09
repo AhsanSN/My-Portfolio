@@ -1,130 +1,127 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" data-form-id="">
-  <head>
 
-<style type="text/css">
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:600");
-.header__main {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  text-align: left;
-}
+<head>
 
-.slider {
-  width: 100vw;
-  height: 100vh;
-}
-
-.slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-}
-.slide:target .slide__bg {
-  opacity: 1;
-}
-.slide:target .slide__image {
-  transform: translate(0);
-  opacity: 1;
-  transition-delay: 0.5s;
-  filter: blur(0) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
-}
-
-.slide__bg {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2);
-  filter: blur(50px);
-  opacity: 0;
-  transition: opacity 1s ease;
-  will-change: opacity;
-}
-
-.slide__images {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 265px;
-  margin: 0 20px;
-}
-
-.slide__image {
-  position: absolute;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.5s ease-in-out 0s;
-  filter: blur(10px) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
-  will-change: transform, opacity, filter;
-}
-.slide__image svg {
-  display: block;
-}
-.slide__image--left {
-  transform: translate(0.75%, -10px);
-}
-.slide__image--right {
-  top: 5vmin;
-  transform: translate(-0.75%, 10px);
-}
-
-.slider__pagination {
-  position: absolute;
-  bottom: 7vh;
-  width: 100%;
-  text-align: center;
-}
-
-.button {
-  position: relative;
-  display: inline-block;
-  padding: 20px 40px;
-  border: 2px solid #fff;
-  line-height: 1;
-  font: 600 12px "Montserrat", sans-serif;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: white;
-  transition: all 0.25s ease;
-  appearance: none;
-}
-.button:hover {
-  color: #333;
-  background-color: white;
-}
-</style>
-
-
-
-
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:600");
+        .header__main {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: left;
+        }
+        
+        .slider {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+        }
+        
+        .slide:target .slide__bg {
+            opacity: 1;
+        }
+        
+        .slide:target .slide__image {
+            transform: translate(0);
+            opacity: 1;
+            transition-delay: 0.5s;
+            filter: blur(0) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
+        }
+        
+        .slide__bg {
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            filter: blur(50px);
+            opacity: 0;
+            transition: opacity 1s ease;
+            will-change: opacity;
+        }
+        
+        .slide__images {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 265px;
+            margin: 0 20px;
+        }
+        
+        .slide__image {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.5s ease-in-out 0s;
+            filter: blur(10px) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
+            will-change: transform, opacity, filter;
+        }
+        
+        .slide__image svg {
+            display: block;
+        }
+        
+        .slide__image--left {
+            transform: translate(0.75%, -10px);
+        }
+        
+        .slide__image--right {
+            top: 5vmin;
+            transform: translate(-0.75%, 10px);
+        }
+        
+        .slider__pagination {
+            position: absolute;
+            bottom: 7vh;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 20px 40px;
+            border: 2px solid #fff;
+            line-height: 1;
+            font: 600 12px "Montserrat", sans-serif;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: white;
+            transition: all 0.25s ease;
+            appearance: none;
+        }
+        
+        .button:hover {
+            color: #333;
+            background-color: white;
+        }
+    </style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" href="https://jp.heroku.com" hreflang="ja" />
 
-
     <title>Cloud Application Platform | Heroku</title>
     <meta property="og:title" content="Cloud Application Platform | Heroku">
 
-      <meta name="description" content="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">
-      <meta property="og:description" content="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">
+    <meta name="description" content="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">
+    <meta property="og:description" content="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">
 
-      <meta property="og:image" content="https://www.herokucdn.com/images/og.png">
-      <meta property="og:image:width" content="1200">
+    <meta property="og:image" content="https://www.herokucdn.com/images/og.png">
+    <meta property="og:image:width" content="1200">
 
-      <meta name="slack-app-id" content="A1QME020P">
-
-    
+    <meta name="slack-app-id" content="A1QME020P">
 
     <link rel="shortcut icon" type="image/x-icon" href="https://www.herokucdn.com/favicon.ico" />
 
@@ -133,127 +130,97 @@
     <link rel="canonical" href="https://www.heroku.com/" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="79CPBOftQpt+SQzCOsAN6lAz7v/vKr64I7GQDmGloLhid+BjHMgLf7RaCBpBEJYJXTCkzHigAbkK1bLrMVf25Q==" />
+    <meta name="csrf-token" content="79CPBOftQpt+SQzCOsAN6lAz7v/vKr64I7GQDmGloLhid+BjHMgLf7RaCBpBEJYJXTCkzHigAbkK1bLrMVf25Q==" />
 
-    
-  </head>
+</head>
+
 <body class="home-page js-home-index">
-      
-  
-
-
-    
 
     <div class="page">
-      
 
+        <div class="page-content">
 
+            <div class="section-purple">
 
+                <section class="screencast">
+                    <div class="wrapper">
+                        <h2 class="text-center">My projects</h2>
+                        <p class="text-center">thesea are my projects</p>
+                        <div class="screencast-container has-spinner">
 
+                            <div class="video-wrapper video-wrapper-dark">
 
+                                <div class="fluid-width-video-wrapper playing">
+                                    <br>
+                                    <h2 class="text-center">Anomoz V2</h2>
+                                    <header class="header__main">
+                                        <div class="slider">
+                                            <svg class="slider__mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" width="0" height="0">
+                                                <defs>
+                                                    <!-- Slide 1 -->
+                                                    <image xlink:href="proj-screenshots/Screenshot (627).png" width="100%" height="100%" />
+                                                    </pattern>
+                                                    <pattern id="pattern1l" patternUnits="userSpaceOnUse" width="662" height="666" viewBox="0 0 662 666">
+                                                        <image xlink:href="proj-screenshots/Screenshot (627).png" width="600px" height="600px" />
+                                                    </pattern>
+                                                    <pattern id="pattern1r" patternUnits="userSpaceOnUse" x="365px" width="562" height="566" viewBox="0 0 562 566">
+                                                        <image xlink:href="proj-screenshots/Screenshot (546).png" width="600px" height="600px" />
+                                                    </pattern>
 
-      <div class="page-content">
-        
+                                                </defs>
+                                            </svg>
 
+                                            <div class="slide" id="slide-1">
+                                                <svg class="slide__bg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920" height="1080">
+                                                    <rect x="0" y="0" width="1920" height="1080" fill="url(#bg1)" />
+                                                </svg>
+                                                <div class="slide__images" style="top: -70px;">
+                                                    <div class="slide__image slide__image--left">
+                                                        <svg viewBox="0 0 900 365" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px">
+                                                            <path d="M 0 0 L 0 365 L 351.2382 365 L 562 0 L 0 0 Z" fill="url(#pattern1l)" />
+                                                        </svg>
+                                                    </div>
 
+                                                    <div class="slide__image slide__image--right">
+                                                        <svg viewBox="0 0 900 365" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px">
+                                                            <path d="M 900 365 L 900 0 L 548.7618 0 L 338 365 L 900 365 Z" fill="url(#pattern1r)" />
+                                                        </svg>
+                                                        <br>
+                                                        <p class="text-center">A anonymous chatting application where people can chat in groups on different topics. People can also be invited on one's wall. All users are notified in case of a new message.</p>
+                                                        <p class="text-center">Website available here, <a href="https://www.anomoz.com">Anomoz.com</a></p>
+                                                        <div class="text-center">
+                                                            <a class="btn btn-primary btn-lg btn-uppercase" href="/customers">View more Screenshots</a>
+                                                            <br>
+                                                            <a class="btn btn-primary btn-lg btn-uppercase" href="https://github.com/AhsanSN/Anomoz-v2">Visit Repository</a>
+                                                        </div>
 
+                                                    </div>
 
+                                                </div>
 
+                                            </div>
 
-<div class="section-purple">
-  
+                                    </header>
 
-  <section class="screencast">
-  <div class="wrapper">
-    <h2 class="text-center">My projects</h2>
-    <p class="text-center">thesea are my projects</p>
-    <div class="screencast-container has-spinner">
-      
-      
-      <div class="video-wrapper video-wrapper-dark">
+                                    </div>
 
-          <div class="fluid-width-video-wrapper playing">
-          	<br>
-          	<h2 class="text-center">Anomoz V2</h2>
-          		<header class="header__main">
-    <div class="slider">
-      <svg class="slider__mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" width="0" height="0">
-        <defs>
-          <!-- Slide 1 -->
-            <image xlink:href="proj-screenshots/Screenshot (627).png" width="100%" height="100%"/>
-          </pattern>
-          <pattern id="pattern1l" patternUnits="userSpaceOnUse" width="662" height="666" viewBox="0 0 662 666">
-            <image xlink:href="proj-screenshots/Screenshot (627).png" width="600px" height="600px"/>
-          </pattern>
-          <pattern id="pattern1r" patternUnits="userSpaceOnUse" x="365px" width="562" height="566" viewBox="0 0 562 566">
-            <image xlink:href="proj-screenshots/Screenshot (546).png" width="600px" height="600px"/>
-          </pattern>
-          
-          
-        </defs>
-      </svg>
+                                </div>
+                                <div>
 
-      <div class="slide" id="slide-1" >
-        <svg class="slide__bg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920" height="1080">
-          <rect x="0" y="0" width="1920" height="1080" fill="url(#bg1)" />
-        </svg>
-        <div class="slide__images" style="top: -70px;">
-          <div class="slide__image slide__image--left">
-            <svg viewBox="0 0 900 365" version="1.1"	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px">
-              <path d="M 0 0 L 0 365 L 351.2382 365 L 562 0 L 0 0 Z" fill="url(#pattern1l)"/>
-            </svg>
-          </div>
+                                </div>
+                            </div>
 
-          <div class="slide__image slide__image--right">
-            <svg viewBox="0 0 900 365" version="1.1"	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px">
-              <path d="M 900 365 L 900 0 L 548.7618 0 L 338 365 L 900 365 Z" fill="url(#pattern1r)"/>
-            </svg>
-            <br>
-                    <p class="text-center">A anonymous chatting application where people can chat in groups on different topics. People can also be invited on one's wall. All users are notified in case of a new message.</p>
-                    <p class="text-center">Website available here, <a href="https://www.anomoz.com">Anomoz.com</a></p>
-                    <div class="text-center">
-                    	<a class="btn btn-primary btn-lg btn-uppercase" href="/customers">View more Screenshots</a>
-                    	<br>
-                    	<a class="btn btn-primary btn-lg btn-uppercase" href="https://github.com/AhsanSN/Anomoz-v2">Visit Repository</a>
-                    </div>
-                    
+                        </div>
 
-          </div>
+                </section>
 
+                </div>
+            </div>
         </div>
 
-
-      </div>
-            
-
-
-
-  </header>
-
-          </div>
-
-          
-        
-          
-      </div>
-      <div>
-        
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-</div>
-      </div>
-    </div>
-
-
-
 </body>
+
 </html>
 <script type="text/javascript">
-	window.location.href="#slide-1";
-
+    window.location.href = "#slide-1";
 </script>
