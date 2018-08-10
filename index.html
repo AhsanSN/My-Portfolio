@@ -202,25 +202,6 @@ body * {
     dragStart, 
     dragEnd;
 
-
-carousel.on('mousedown', function(){
-  if (carousel.hasClass('transition')) return;
-  dragStart = event.pageX;
-  $(this).on('mousemove', function(){
-    dragEnd = event.pageX;
-    $(this).css('transform','translateX('+ dragPos() +'px)')
-  })
-  $(document).on('mouseup', function(){
-    if (dragPos() > threshold) { return shiftSlide(1) }
-    if (dragPos() < -threshold) { return shiftSlide(-1) }
-    shiftSlide(0);
-  })
-});
-
-function dragPos() {
-  return dragEnd - dragStart;
-}
-
 function shiftSlide(direction, carouselImp) {
 	//$('#carousel')
 	var carousel = $('#carousel'+carouselImp);
