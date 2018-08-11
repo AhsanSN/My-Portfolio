@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-form-id="">
+<html lang="en">
 
 <head>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
@@ -154,33 +154,5 @@
 </body>
 
 </html>
-<script type="text/javascript">
-    var carousela = $('#carousel'),
-    threshold = 150,
-    slideWidth = 500,
-    dragStart, 
-    dragEnd;
+<script src="main.js"></script>
 
-function shiftSlide(direction, carouselImp) {
-	//$('#carousel')
-	var carousel = $('#carousel'+carouselImp);
-	
-  if (carousel.hasClass('transition')) return;
-  dragEnd = dragStart;
-  $(document).off('mouseup')
-  carousel.off('mousemove')
-          .addClass('transition')
-          .css('transform','translateX(' + (direction * slideWidth) + 'px)'); 
-  setTimeout(function(){
-    if (direction === 1) {
-      $('.slide'+carouselImp+':first').before($('.slide'+carouselImp+':last'));
-    } else if (direction === -1) {
-      $('.slide'+carouselImp+':last').after($('.slide'+carouselImp+':first'));
-    }
-    carousel.removeClass('transition')
-		carousel.css('transform','translateX(0px)'); 
-  },450)
-}
-
-
-</script>
