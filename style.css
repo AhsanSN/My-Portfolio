@@ -73,6 +73,25 @@ body * {
   background: #C44D33;
 }
 
+.slide#b6{
+  background: #556270;
+}
+
+.slide#b7 {
+  background: #4ECDC4;
+}
+
+.slide#b8 {
+  background: #9CE462;
+}
+
+.slide#b9 {
+  background: #FF6B6B;
+}
+
+.slide#b10 {
+  background: #C44D33;
+}
 #prev, #next {
   cursor: pointer;
   position: absolute;
